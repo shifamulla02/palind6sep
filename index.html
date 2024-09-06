@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>palindrome checker by shifa</title>
+		<style>
+			*{font-size: 40px; font-family: Times New Roman;}
+			body{background-color: linen;}
+			h1{background-color: pink; color:black; width:50%;border-radius:30px;}
+		</style>
+	</head>
+
+	<body>
+		<center>
+		<h1>PALINDROME CHECKER</h1>
+
+		<form onsubmit= "check()">
+			<input type="text" id="string" placeholder="enter a string" />
+			<br/><br/>
+			<input type="submit" value="check"/>
+			<h2 id="msg" />
+		</form>
+
+		<script>
+			function check()
+			{
+				event.preventDefault();
+				let string=document.getElementById("string");
+				let msg=document.getElementById("msg");
+				
+				if(string.value==="")
+				{
+					alert("enter a string!");
+					msg.innerHTML="";
+					string.focus();
+					return;
+				}
+
+				let org= string.value;
+				let rev= org.split("").reverse().join("");
+				if(org===rev)
+				{
+					msg.innerHTML= org + " is a palindrome";
+				}
+				else
+				{
+					msg.innerHTML= org+" is not a palindrome";
+				}
+					
+			}
+		</script>
+		</center>
+	</body>
+</html>
